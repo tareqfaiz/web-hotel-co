@@ -1,0 +1,175 @@
+/* General Reset */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+html, body {
+   height: 100%;
+}
+
+body {
+   font-family: 'Arial', sans-serif;
+   line-height: 1.6;
+   background-color: #f4f4f4;
+   color: #333;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between; /* Push footer to the bottom */
+}
+
+header {
+   background-color: #ffc107;
+   text-align: center;
+   padding: 20px;
+}
+
+header h1 {
+   margin: 0;
+   color: black;
+   font-size: 2.5rem;
+   font-weight: bolder;
+}
+
+.container {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 20px;
+   padding: 20px;
+   margin: 20px;
+   justify-content: space-between;
+}
+
+.categories {
+   flex: 3;
+   max-height: 400px;
+   overflow: hidden;
+   padding: 20px;
+}
+
+.category-grid {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr); /* Default to 3 columns for large screens */
+   gap: 15px;
+}
+
+.category-box {
+   background: #f9f9f9;
+   border: 2px solid black;
+   height: 120px;
+   padding: 20px;
+   text-align: center;
+   align-content: center;
+   border-radius: 5px;
+   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+   transition: background 0.3s ease;
+}
+
+.category-box:hover {
+   background-color: #ffc107;
+   color: #fff;
+}
+
+/* Latest Articles */
+.latest-articles {
+   flex: 1;
+   min-height: 400px;
+   padding: 20px;
+   border: 2px solid black;
+   border-radius: 5px;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.latest-articles ul {
+   list-style-type: none;
+   padding: 0;
+}
+
+.latest-articles li {
+   margin: 10px 0;
+}
+
+/* Social Media Links */
+.social-media a {
+   font-size: 24px;
+   transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+   color: #e1e4eb;
+}
+
+footer {
+   background: #ffa500;
+   color: #fff;
+   padding: 20px;
+   margin-top: auto;
+   display: flex;
+   justify-content: center;
+   gap: 150px;
+}
+
+a {
+   text-decoration: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px; /* Add padding for medium screens */
+        flex-direction: column; /* Stack container elements vertically */
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
+        gap: 10px;
+    }
+
+    .category-box {
+        font-size: 0.9em; /* Adjust font size for medium devices */
+        height: auto; /* Allow dynamic height */
+    }
+
+    .latest-articles {
+        min-height: auto; /* Let it adjust based on content */
+    }
+
+    footer {
+        gap: 20px; /* Reduce footer gap on medium screens */
+        flex-direction: column; /* Stack footer items vertically */
+        align-items: center;
+        padding: 10px; /* Reduce footer padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 5px; /* Further reduce padding for small screens */
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr; /* Single column for mobile screens */
+        gap: 10px; /* Adjust spacing */
+    }
+
+    .category-box {
+        padding: 5px; /* Adjust padding for smaller boxes */
+        height: auto; /* Allow dynamic height adjustment */
+        width: 100%; /* Ensure full width on small screens */
+    }
+
+    .latest-articles {
+        padding: 10px; /* Adjust padding for article section */
+    }
+
+    .latest-articles li {
+        font-size: 0.8em; /* Adjust font size for small screens */
+    }
+
+    footer {
+        gap: 10px; /* Minimal gap between footer items */
+        padding: 10px; /* Consistent padding */
+        text-align: center; /* Center-align footer text on small screens */
+    }
+}
